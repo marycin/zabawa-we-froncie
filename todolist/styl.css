@@ -103,3 +103,38 @@ body{
     background-color: darkgrey;
     border: 0px
 }
+
+#task-adder{
+    display: none;
+    flex-direction: column;
+    padding-left: 20px;
+    width:85%;
+
+    align-self: center;
+    box-sizing: border-box;
+}
+
+.task-adder-item{
+    display:flex;
+    align-items: center;
+    gap:10px;
+}
+
+.task-adder-item input, select{
+    width:90%;
+    height:30px;
+    border-radius:10px;
+    background-color:lightgray;
+    border:0;
+    display:inline-block;
+    
+}
+
+#task-adder button{
+    width:50%;
+    height:30px;
+    border-radius:10px;
+    background-color:lightgray;
+    border:0;
+    text-align: center;
+}

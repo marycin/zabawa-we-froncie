@@ -21,7 +21,7 @@
         </div>
         <div class = 'main-content'>
             <div class="top-area">
-                <div class="add-button">
+                <div class="add-button" id ='show-button'>
                     <button>Add task</button>
                 </div>
                 <div class="search-area">
@@ -29,7 +29,7 @@
                     <button id="searching-button">Search</button>
                 </div>
             </div>
-            <div class="tasks-area">
+            <div class="tasks-area" id = 'tasks-area'  >
                 <div class="task">
                     <div class="task-left">
                         <input type="checkbox">
@@ -42,12 +42,36 @@
                     <div class="task-right">
                         <button class="delete-task">DEL</button>
                     </div>
-                   
-
+                </div>
+                <div id = "task-adder">
+                    <div class = 'task-adder-item'>
+                        <h3>Title:</h3><input type = 'textarea' id="inputTitle" placeholder='Title'>
+                    </div>
+                    <div class = 'task-adder-item'>
+                        <h3>List:</h3>
+                        <select id="typeOfToDo">
+                            <option value="None">None</option>
+                            <option value="Private">Private</option>
+                            <option value="Work">Work</option>
+                        </select>
+                    </div>
+                    <div class = 'task-adder-item'>
+                        <h3>Date:</h3> <input type="date" id="taskDate" value="2022-01-13">
+                    </div>
+                    <div class = 'task-adder-item'>
+                        <h3>Priority: </h3>
+                        <select id="typeOfPriority">
+                            <option value="None">None</option>
+                            <option value="Low">Low</option>
+                            <option value="Middle">Middle</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                    <button id="taskAddButton">Add</button>
                 </div>
             </div>
         </div>
     </div> 
-    <script type='text/javascript' src="'skrypt.js" ></script>
+    <script type='text/javascript' src='skrypt.js' ></script>
 </body>
 </html>
