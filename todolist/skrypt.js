@@ -1,8 +1,8 @@
-console.log("gitens");
 
 let tasks = document.getElementById('tasks-area');
 let showTaskButton = document.getElementById('show-button')
 let addTaskButton = document.getElementById('taskAddButton')
+
 
 let taskAdder = document.getElementById('task-adder')
 
@@ -11,7 +11,9 @@ let taskDate = document.getElementById('taskDate')
 let taskType = document.getElementById("typeOfToDo")
 let taskPriority = document.getElementById("typeOfPriority")
 
-console.log(tasks.children[0])
+
+
+
 
 function addItem(){
     let titleToAdd = taskTitle.value
@@ -29,7 +31,11 @@ function addItem(){
         checkboxToAdd.type = 'checkbox';
         let divDesc = document.createElement('div')
         divDesc.classList.add('task-description')
-        divDesc.innerHTML = '<h3>' + titleToAdd +'</h3><p>Priority:' + priorityToAdd +'</p> '
+        divDesc.innerHTML = '<h3>' + titleToAdd +
+        '</h3><p>Priority:' + 
+        priorityToAdd +'</p> ' +
+        '<p>Type: ' + typeToAdd + 
+        '</p><p>Date: ' + dateToAdd + '</p>'
         
         //data i typ do dodania w html
         let divRightSide = document.createElement('div')
@@ -37,6 +43,9 @@ function addItem(){
         let buttonRightSide = document.createElement('button')
         buttonRightSide.classList.add('delete-task')
         buttonRightSide.innerHTML = 'DEL' 
+        buttonRightSide.addEventListener('click',deleteTask)
+        //przypisuje sie do nieistniejacych taskow addeventlistener
+        //parent w dol, a nie child w gore
         
         divLeftSide.appendChild(checkboxToAdd)
         divLeftSide.appendChild(divDesc)
@@ -51,16 +60,15 @@ function addItem(){
         taskTitle.value =""
         taskType.value = "None"
         taskPriority.value = "None"
+        taskAdder.style.display = "none"
     }
     else{
         console.log("cos nie tak")
     }
-    
-
-    
+     
 }
 
-function openTaskAdder(){
+function openOrShowTaskAdder(){
     if(taskAdder.style.display ==="flex"){
         taskAdder.style.display = "none"
     }
@@ -69,6 +77,19 @@ function openTaskAdder(){
     }
 }
 
-showTaskButton.addEventListener('click',openTaskAdder);
+showTaskButton.addEventListener('click',openOrShowTaskAdder);
 
 addTaskButton.addEventListener('click',addItem);
+
+const deleteTask = ()=>{
+    let deleteTaskButtons = document.querySelectorAll('.delete-task')
+    tasks = document.getElementById('tasks-area');
+    console.log(deleteTaskButtons.length)
+    Array.from(deleteTaskButtons).forEach((element)=>{
+        element.addEventListener('click',()=>{
+            console.log('top')
+            tasks.removeChild(element.parentNode.parentElement);
+        })
+    })
+}
+deleteTask();
