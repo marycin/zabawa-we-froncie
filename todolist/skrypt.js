@@ -10,6 +10,8 @@ let taskDate = document.getElementById('taskDate')
 let taskType = document.getElementById("typeOfToDo")
 let taskPriority = document.getElementById("typeOfPriority")
 
+let menuHeaderButton = document.getElementById("menuheader-button")
+
 let counter = 1
 
 tasks.innerHTML += "<div class='task' id='row"+counter+"'>\
@@ -76,6 +78,26 @@ function remove(button){
     let row = document.getElementById('row'+number[number.length-1])
     row.remove()
 }
+
+function showMenuButtons(){
+    let menubuttons = document.getElementById('menubuttons')
+    if(window.innerWidth < 501){
+        
+        if(menubuttons.style.display ==="block"){
+            menubuttons.style.display ="none"
+            taskAdder.style.top = "200px"
+        }
+        else{
+            menubuttons.style.display ="block"
+            taskAdder.style.top="30px"
+        }
+    }
+    else{
+        menubuttons.style.display="block"
+    }
+}
+
+menuHeaderButton.addEventListener('click',showMenuButtons)
 
 showTaskButton.addEventListener('click',openOrShowTaskAdder);
 
