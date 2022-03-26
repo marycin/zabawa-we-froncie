@@ -1,0 +1,50 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    
+}
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+#container{
+    margin-top: 10px;
+    display:grid;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-areas: "left mid right";
+    width: 100vw;
+    height: 55vh;
+}
+
+
+#slider{
+    grid-area: mid;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    background-image: url('pics/pic1.jpg');
+
+}
+
+#leftbutton, #rightbutton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#radiobuttons{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+#radiobuttons > *{
+    margin:10px;
+}
