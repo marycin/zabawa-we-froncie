@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel = "stylesheet" href = "style.css">
+    <title>Serial Api</title>
+</head>
+<body>
+    <div class="containter">
+        <div class ='header'>
+            <header class = 'site-header'>
+                <div class="main-site">
+                    <img src="" alt="main-site">
+                </div>
+                <div class="serial-search">
+                    <h2 class="title">Find Serial For Boring Evening!</h2>
+                    <div class="serial-search-box">
+                        <input type="text" class="search-control" placeholder="Enter a name" id="search-input">
+                        <button type="submit" class="search-btn btn" id="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="login-register">
+                    <a class="login" href="#">Login</a>
+                    <a class="register" href="#">Register</a>
+                </div>
+            </header>
+            <div id="show-hide-header-buttons">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+            <div id="header-all-buttons">
+                <button class="header-button" id="favourites">Favourites</button>
+                <button class="header-button">Unasigned</button>
+                <button class="header-button">Unasigned</button>
+                <button class="header-button">Unasigned</button>
+                <button class="header-button" id="lastelement">Unasigned</button>
+            </div>
+        </div>
+        <div class="serial-wrapper" id="serial-wrapper">
+            <div class="serial-result">
+                <h2 class="title hide" id="search-result-title">Your search results:</h2>
+                <div id="serial">
+                    <!--serial item-->
+                    <!-- <div class="serial-item">
+                        <div class="serial-img">
+                            <img src="serial.png" alt="food">
+                        </div>
+                        <div class="serial-name">
+                            <h3>True Detective</h3>
+                        </div>
+                        <div class="serial-details">
+                            <div class="serial-followers">
+                                <p>28082</p>
+                                <p class="serial-detail-desc">Followers</p>
+                            </div>
+                            <div class="serial-year-release">
+                                <p>2011</p>
+                                <p class="serial-detail-desc"> Year</p>
+                            </div>
+                            <div class="serial-more-info">
+                                <a href="#">
+                                    <i class="fa fa-link" aria-hidden="true"></i>
+                                    <p class="serial-detail-desc">More info</p>
+                                </a>
+                            </div>
+                            <div class="serial-network">
+                                <p>HBO</p>
+                                <p class="serial-detail-desc">Network</p>
+                            </div>
+                            <div class="serial-country">
+                                <p>US</p>
+                                <p class="serial-detail-desc">Country</p>
+                            </div>
+                            <div class="serial-follow">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <p class="serial-detail-desc">Follow</p>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!--end serial item-->
+                    
+                </div>
+            </div>
+        </div>
+        <div class="favourite-serial-wrapper" id="fav-serial-wrapper">
+            <div class="favourite-serial-top-box">
+                <h2 class="title" id="search-result-title">Your favourite series:</h2>
+                <div class="sort">
+                    <p>Sort Type:</p>
+                    <select id="sort-type">
+                        <option value="none">None</option>
+                        <option value="alphabetically">Alfabetically</option>
+                        <option value="reverse-alphabetically">Reverse Alphabetically</option>
+                    </select>
+                </div>  
+            </div>
+            <div id="favourite-serial">
+                <!-- fav items -->
+                    <!--
+                    <div class="favourite-serial-item">
+                        <div class="favourite-serial-img">
+                            <img src="nofind.png" alt="food">
+                            <a href='${element.network}' class='favourite-serial-network-link'> 
+                                <i class="fa fa-link" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="favourite-serial-name">
+                            <h3>True Detective</h3>
+                        </div>
+                    </div>
+                     -->
+                <!-- end fav items-->
+                
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
