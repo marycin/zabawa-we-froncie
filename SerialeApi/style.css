@@ -380,6 +380,40 @@ body{
     color:white
 }
 
+.people-wrapper{
+    margin:0 auto;
+    max-width: 1280px;
+}
+
+
+.people-result{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:20px;
+}
+
+#people-item{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+}
+.people-image{
+    margin: 0;
+}
+
+.people-image img{
+    width:20vw;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.people-name{
+    background: var(--text-color);
+    margin:0;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
 
 
 /* Media Queries */

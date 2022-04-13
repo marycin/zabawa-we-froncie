@@ -140,8 +140,7 @@ function addSerialToFavourite(e){
         }
         if(e.target.parentElement.classList.contains('serial-follow')){
             star = e.target.parentElement.children[0]
-        }
-        console.log('top')   
+        }   
         star.classList.add('clicked')
         let item = e.target.parentElement.parentElement.parentElement
         let s
@@ -154,7 +153,9 @@ function addSerialToFavourite(e){
                     image : !!serial.image ? serial.image.medium : 'nofind.png',
                     name : !!serial.name ? serial.name : 'No data',
                     network : !!serial.officialSite ? serial.officialSite : '#',
-                }      
+                }
+                serialIdList.push(serial.id)
+                console.log(serialIdList)      
                 myStorage.setItem('item'+s.id,JSON.stringify(s))
             }
         })
