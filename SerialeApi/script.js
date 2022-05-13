@@ -9,6 +9,10 @@ const favSerialList = document.getElementById('favourite-serial')
 const showHideHeaderButtons = document.getElementById('show-hide-header-buttons')
 const headerAllButtons = document.getElementById('header-all-buttons')
 
+const peoplesBtn = document.getElementById('peoples')
+const peoplesWrapper = document.getElementById('people-wrapper')
+const peoplesList = document.getElementById('people-result')
+
 let serialIdList = []
 
 myStorage = localStorage
@@ -21,6 +25,7 @@ searchBtn.addEventListener('click',getSerialList)
 serialList.addEventListener('click',addSerialToFavourite)
 favouriteButton.addEventListener('click',showFavouriteList)
 showHideHeaderButtons.addEventListener('click',showHideButtons)
+peoplesBtn.addEventListener('click',showPeoples)
 
 function addSerialIDsToList(){
     let objects =[]
@@ -185,6 +190,7 @@ function showFavouriteList(){
     
     favSerialWrapper.style.display = 'block'
     serialListWrapper.style.display = 'none'
+    peoplesWrapper.style.display = 'none'
     let sortType = document.getElementById('sort-type')
     console.log(sortType.value)
     let html = "" 
@@ -211,3 +217,41 @@ function showFavouriteList(){
 }
 
 
+function showPeoples(){
+    favSerialWrapper.style.display = 'none'
+    serialListWrapper.style.display = 'none'
+    peoplesWrapper.style.display = 'block'
+    fetch(`https://api.tvmaze.com/search/people?q=lauren`)
+    .then(response => response.json())
+    .then(data =>{
+        let html = ""
+        if(data){
+            
+            data.forEach(p => {
+                let element = {
+                    image : !!p.person.image ? p.person.image.medium : 'nofind.png',
+                    name : !!p.person.name ? p.person.name : 'No data',
+                }
+                console.log(p)
+                html+=
+                `
+                <div id="people-item">
+                    <div class="people-image">
+                        <img src="${element.image}">
+                    </div>
+                    <div class="people-name">
+                        <p>${element.name}</p>
+                    </div>
+                </div> 
+                `
+            });
+        }else{
+            html = "Sorry, we didn't find anything :c"
+            peoplesList.classList.add('notFound')
+        }
+        peoplesList.innerHTML = html
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+}
